@@ -4,11 +4,11 @@ import networkx as nx
 import sys
 
 
-class VenmoFriendGraph(object):
-    """Initialize a VenmoFriendGraph object to make friend recommendations"""
+class FriendGraph(object):
+    """Initialize a FriendGraph object to make friend recommendations"""
     
     def __init__(self,):
-        self.filename = 'Venmo_Homework_data.csv'
+        self.filename = 'redacted.csv'
         
         # Put csv data into pandas DataFrame
         self.df = self.load_data(self.filename)
@@ -18,7 +18,7 @@ class VenmoFriendGraph(object):
          
         
     def load_data(self, filename):
-        """Put Venmo data into df if file exists"""
+        """Put data into df if file exists"""
          
         try:
             df = pd.read_csv(filename)
@@ -117,11 +117,11 @@ def run():
     else: # otherwise must manually update user_id
         user_id = 59003
     
-    # Instantiate instance of VenmoFriendGraph object
-    v = VenmoFriendGraph()
+    # Instantiate instance of FriendGraph object
+    f = FriendGraph()
     
     # make friend recs for specified user_id    
-    recs = v.recommend_friend(user_id)
+    recs = f.recommend_friend(user_id)
 
 
 if __name__== '__main__':
